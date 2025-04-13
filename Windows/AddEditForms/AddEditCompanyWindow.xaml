@@ -1,0 +1,38 @@
+﻿<Window x:Class="FoodProducts.Windows.AddEditForms.AddEditCompanyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodProducts.Windows.AddEditForms"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        SizeToContent="Height" Width="300"
+        Loaded="Window_Loaded">
+    <StackPanel>
+        <StackPanel Margin="5">
+            <Label Content="Название"/>
+            <TextBox x:Name="tbName"
+                     Text="{Binding Name}"
+                     MaxLength="100"/>
+        </StackPanel>
+        
+        <StackPanel Margin="5">
+            <Label Content="Адрес"/>
+            <TextBox x:Name="tbAddress"
+                     Text="{Binding Address}"
+                     MaxLength="100"/>
+        </StackPanel>
+        
+        <StackPanel Margin="5">
+            <Label Content="ФИО директора"/>
+            <TextBox x:Name="tbDirectorFio"
+                     Text="{Binding DirectorFio}"
+                     MaxLength="100"/>
+        </StackPanel>
+
+        <Button x:Name="btnAddEditCompany"
+                Content="Сохранить"
+                Click="btnAddEditCompany_Click"/>
+    </StackPanel>
+</Window>

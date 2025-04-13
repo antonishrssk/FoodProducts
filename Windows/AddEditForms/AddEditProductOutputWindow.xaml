@@ -1,0 +1,38 @@
+﻿<Window x:Class="FoodProducts.Windows.AddEditForms.AddEditProductOutputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodProducts.Windows.AddEditForms"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        SizeToContent="Height" Width="350"
+        Loaded="Window_Loaded">
+    <StackPanel>
+        <StackPanel Margin="5">
+            <Label Content="Фирма"/>
+            <ComboBox x:Name="cbCompany"
+                      SelectedItem="{Binding Company}"
+                      DisplayMemberPath="Name"/>
+        </StackPanel>
+        
+        <StackPanel Margin="5">
+            <Label Content="Продукт"/>
+            <ComboBox x:Name="cbProduct"
+                      SelectedItem="{Binding Product}"
+                      DisplayMemberPath="Name"/>
+        </StackPanel>
+        
+        <StackPanel Margin="5">
+            <Label Content="Количество продуктов, произведенных фирмой"/>
+            <TextBox x:Name="tbProductAmount"
+                     Text="{Binding ProductAmount}"
+                     MaxLength="200"/>
+        </StackPanel>
+
+        <Button x:Name="btnAddEditProductOutput"
+                Content="Сохранить"
+                Click="btnAddEditProductOutput_Click"/>
+    </StackPanel>
+</Window>

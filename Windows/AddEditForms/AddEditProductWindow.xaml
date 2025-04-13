@@ -1,0 +1,38 @@
+﻿<Window x:Class="FoodProducts.Windows.AddEditForms.AddEditProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodProducts.Windows.AddEditForms"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        SizeToContent="Height" Width="300"
+        Loaded="Window_Loaded">
+    <StackPanel>
+        <StackPanel Margin="5">
+            <Label Content="Наименование"/>
+            <TextBox x:Name="tbName"
+                     Text="{Binding Name}"
+                     MaxLength="200"/>
+        </StackPanel>
+        
+        <StackPanel Margin="5">
+            <Label Content="Группа"/>
+            <ComboBox x:Name="cbGroup"
+                      SelectedItem="{Binding Group}"
+                      DisplayMemberPath="Name"/>
+        </StackPanel>
+        
+        <StackPanel Margin="5">
+            <Label Content="Вид упаковки"/>
+            <ComboBox x:Name="cbPackagingType"
+                      SelectedItem="{Binding PackagingType}"
+                      DisplayMemberPath="Name"/>
+        </StackPanel>
+
+        <Button x:Name="btnAddEditProduct"
+                Content="Сохранить"
+                Click="btnAddEditProduct_Click"/>
+    </StackPanel>
+</Window>
